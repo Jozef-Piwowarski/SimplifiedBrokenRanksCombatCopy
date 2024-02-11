@@ -19,21 +19,40 @@ namespace SecondTaernCombat
 
         public void DoCharacterTurn()
         {
+            if (DoesAttackHit() == false && DoesDoubleAttackRollHit() == false)
+            {
+                return;
+            }
+            if (DoesDoubleDefenceRollBlock())
+            {
+                return;
+            }
             DoAttack();
         }
         private void DoAttack()
         {
-            Random rand = new Random();
-            if ((Convert.ToDecimal(rand.Next(1, 1001)) / 1000) >= CalculateHitChance())
-            {
-                if ((Convert.ToDecimal(rand.Next(1, 1001)) / 1000) < Attacker.DoubleHitRollChance)
-                {
-                    //Console.WriteLine("REROLL");
-                    if ((Convert.ToDecimal(rand.Next(1, 1001)) / 1000) >= CalculateHitChance()) { return; }
-                }
-                else return;
-            }
             Defender.ReceiveDamage(Attacker.PlaceholderDamage);
+        }
+
+        private bool DoesAttackHit()
+        {
+            return Dice.Roll(1000)/1000 <= CalculateHitChance();
+        }
+        private bool DoesDoubleAttackRollHit()
+        {
+            if (Dice.Roll(1000) / 1000 < Attacker.DoubleHitRollChance)
+            {
+                if (DoesAttackHit()) { return true; }
+            }
+            return false;
+        }
+        private bool DoesDoubleDefenceRollBlock()
+        {
+            if (Dice.Roll(1000) / 1000 < Defender.DoubleDefenceRollChance)
+            {
+                if (!DoesAttackHit()) { return true; }
+            }
+            return false;
         }
         private decimal CalculateHitChance()
         {

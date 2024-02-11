@@ -8,7 +8,7 @@ namespace SecondTaernCombat
 {
     public class Character
     {
-        public Character(int id, int health, int maxHealth, decimal hitStat, decimal defenceStat, int placeholderDamage, decimal doubleHitRollChance)
+        public Character(int id, int health, int maxHealth, decimal hitStat, decimal defenceStat, int placeholderDamage, decimal doubleHitRollChance, decimal doubleDefenceRollChance)
         {
             this.id = id;
             this.health = health;
@@ -17,6 +17,7 @@ namespace SecondTaernCombat
             DefenceStat = defenceStat;
             PlaceholderDamage = placeholderDamage;
             DoubleHitRollChance = doubleHitRollChance;
+            DoubleDefenceRollChance = doubleDefenceRollChance;
             DefenceStat = defenceStat;
         }
         public int id { get; set; }

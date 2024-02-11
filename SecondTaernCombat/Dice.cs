@@ -8,7 +8,7 @@ namespace SecondTaernCombat
 {
     public static class Dice
     {
-        public static decimal Roll(int sides)
+        public static decimal Roll(int sides = 0)
         {
             //This code is so pog omg so me bestieeeeeee slay
             if (sides <= 0) { return 0; } 

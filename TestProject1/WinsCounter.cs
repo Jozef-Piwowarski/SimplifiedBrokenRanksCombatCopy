@@ -22,4 +22,5 @@ namespace SecondTaernCombat
             return firstTeamWins.ToString() + " " + secondTeamWins.ToString();
         }
     }
+
 }
