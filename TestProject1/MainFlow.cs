@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecondTaernCombat
+namespace TestProject1
 {
     public static class MainFlow
     {

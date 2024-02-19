@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace TestProject1
 {
-    public class Character
+    [TestClass]
+    public class CharacterTest
     {
-        public Character(int id, int health, int maxHealth, decimal hitStat, decimal defenceStat, int placeholderDamage, decimal doubleHitRollChance)
+        public CharacterTest(int id, int health, int maxHealth, decimal hitStat, decimal defenceStat, int placeholderDamage, decimal doubleHitRollChance)
         {
             this.id = id;
             this.health = health;
@@ -30,6 +31,13 @@ namespace TestProject1
         {
             health -= damage;
         }
-
+        [TestMethod]
+        public void Receive10DamageTest()
+        {
+            int health = 100;
+            int originalHealth = health;
+            ReceiveDamage(10);
+            Assert.AreEqual(originalHealth-10, health);
+        }
     }
 }
