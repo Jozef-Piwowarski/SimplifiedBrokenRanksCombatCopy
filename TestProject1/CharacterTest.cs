@@ -39,5 +39,11 @@ namespace TestProject1
             ReceiveDamage(10);
             Assert.AreEqual(originalHealth-10, health);
         }
+
+        [TestMethod]
+        public void pls()
+        {
+            Assert.IsTrue(1==1);
+        }
     }
 }

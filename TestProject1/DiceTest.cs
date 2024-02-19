@@ -12,7 +12,6 @@ namespace TestProject1
     {
         public static decimal RollTestSides(int sides)
         {
-            //This code is so pog omg so me bestieeeeeee slayTest
             if (sides <= 0) { return 0; } 
             var rand = new Random();
             return Convert.ToDecimal(rand.Next(1, sides+1));

@@ -10,7 +10,6 @@ namespace SecondTaernCombat
     {
         public static decimal Roll(int sides = 0)
         {
-            //This code is so pog omg so me bestieeeeeee slay
             if (sides <= 0) { return 0; } 
             var rand = new Random();
             return Convert.ToDecimal(rand.Next(1, sides+1));
