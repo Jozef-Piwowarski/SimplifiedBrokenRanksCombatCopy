@@ -21,7 +21,7 @@ namespace SecondTaernCombat
             {
                 return;
             }
-            if (DoesDoubleDefenceRollBlock())
+            if (DoesDoubleDefenceRollBlock() == true)
             {
                 return;
             }
