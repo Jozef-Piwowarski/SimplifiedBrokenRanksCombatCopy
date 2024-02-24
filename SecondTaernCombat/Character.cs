@@ -29,10 +29,7 @@ namespace SecondTaernCombat
         public decimal DoubleDefenceRollChance { get; private set; }
         public int PlaceholderDamage { get; private set; }
 
-        public void ReceiveDamage(int damage)
-        {
-            health -= damage;
-        }
+        public void ReceiveDamage(int damage) => health -= damage;
 
     }
 }

@@ -13,10 +13,8 @@ namespace SecondTaernCombat
             Attacker = attacker;
             Defender = defender;
         }
-
         Character Attacker { get; set; }
         Character Defender { get; set; }
-
         public void DoCharacterTurn()
         {
             if (DoesAttackHit() == false && DoesDoubleAttackRollHit() == false)
@@ -29,15 +27,8 @@ namespace SecondTaernCombat
             }
             DoAttack();
         }
-        private void DoAttack()
-        {
-            Defender.ReceiveDamage(Attacker.PlaceholderDamage);
-        }
-
-        private bool DoesAttackHit()
-        {
-            return Dice.Roll(1000)/1000 <= CalculateHitChance();
-        }
+        private void DoAttack() => Defender.ReceiveDamage(Attacker.PlaceholderDamage);
+        private bool DoesAttackHit() => Dice.Roll(1000) / 1000 <= CalculateHitChance();
         private bool DoesDoubleAttackRollHit()
         {
             if (Dice.Roll(1000) / 1000 < Attacker.DoubleHitRollChance)

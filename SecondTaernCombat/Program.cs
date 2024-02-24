@@ -11,7 +11,7 @@ for (int i = 0; i < 1000000; i++)
 
     //MainFlow.Run(Char1, Char2);
     //MainFlow.Run2([Char1, Char2, Char3],[Char4, Char5, Char6]);
-    MainFlow.Run2([Char3], [Char4]);
+    MainFlow.Run([Char3], [Char4]);
 }
 
 
